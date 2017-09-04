@@ -36,8 +36,8 @@
     <div class="ui bottom attached grean basic button" v-show="todo.done">
         Completed
     </div>
-    <div class="ui bottom attached red basic button" v-show="!todo.done">
-        Complete
+    <div class="ui bottom attached red basic button" v-show="!todo.done" v-on:click="completeTodo()">
+        panding
     </div>
 </div>
 </template>
@@ -58,6 +58,9 @@ export default {
     },
     deleteTodo (todo) {
       this.$emit('delete-todo', todo)
+    },
+    completeTodo (todo) {
+      this.$emit('complete-todo', todo)
     }
   }
 }

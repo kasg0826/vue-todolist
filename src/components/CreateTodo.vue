@@ -51,10 +51,11 @@ export default {
         this.$emit('create-todo', {
           title,
           project,
-          done: false
+          finished: false
         })
-        this.newTodoText = ''
       }
+      this.titleText = ''
+      this.projectText = ''
       this.isCreating = false
     }
   }

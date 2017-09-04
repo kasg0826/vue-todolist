@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <todo-list v-bind:todos="todos"></todo-list>
-    <create-todo v-on:add-todo="addTodo"></create-todo>
+    <create-todo v-on:create-todo="addTodo"></create-todo>
   </div>
 </template>
 
@@ -21,32 +21,29 @@ export default {
       todos: [{
         title: 'Todo A',
         project: 'Project A',
-        done: false
+        finished: false
       },
       {
         title: 'Todo B',
         project: 'Project B',
-        done: false
+        finished: false
       },
       {
         title: 'Todo C',
         project: 'Project C',
-        done: false
+        finished: false
       },
       {
         title: 'Todo D',
         project: 'Project D',
-        done: false
+        finished: false
       }]
     }
   },
 
   methods: {
-    addTodo (title) {
-      this.todos.push({
-        title,
-        done: false
-      })
+    addTodo (newTodo) {
+      this.todos.push(newTodo)
     }
   }
 }
